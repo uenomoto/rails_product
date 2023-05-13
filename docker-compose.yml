@@ -25,5 +25,7 @@ services:
     environment:
     - 'POSTGRES_USER=postgres'
     - 'POSTGRES_PASSWORD=postgres'
+    # テスト環境で使用↓
+    - 'POSTGRES_HOST_AUTH_METHOD=trust'
     volumes:
       - 'db-data:/var/lib/postgresql/data'
