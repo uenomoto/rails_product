@@ -1,15 +1,16 @@
-version: '3'
+version: '3.8'
 
 volumes:
   db-data:
   
 services:
   web:
+    container_name: rails
     build: .
     ports:
       - '3000:3000'
     volumes:
-      - '.:/rails_product'
+      - '.:/rails_product-in'
     environment:
       - 'DATABASE_PASSWORD=postgres'
     # -itの部分↓
@@ -17,10 +18,9 @@ services:
     stdin_open: true
     depends_on:
       - db
-    links:
-      - db
 
   db:
+    container_name: postgres_db
     image: postgres
     environment:
     - 'POSTGRES_USER=postgres'
