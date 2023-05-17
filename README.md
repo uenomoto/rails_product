@@ -2,6 +2,9 @@
 
 ### 一つずつ行きます。
 
+クローン忘れずに！
+クローンしたディレクトリに移動してから初めてください！
+
 1. まず`docker-compose build`で dockerfile をビルドしてイメージを作成。
 
 - `docker images`で確認！
